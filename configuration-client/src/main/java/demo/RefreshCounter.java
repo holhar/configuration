@@ -11,14 +11,14 @@ import java.util.concurrent.atomic.AtomicLong;
 @Component
 public class RefreshCounter {
 
- private final Log log = LogFactory.getLog(getClass());
+    private final Log log = LogFactory.getLog(getClass());
 
- private final AtomicLong counter = new AtomicLong(0); // <1>
+    private final AtomicLong counter = new AtomicLong(0); // <1>
 
- // <2>
- @EventListener
- public void refresh(RefreshScopeRefreshedEvent e) {
-  this.log.info("The refresh count is now at: "
-   + this.counter.incrementAndGet());
- }
+    // <2>
+    @EventListener
+    public void refresh(RefreshScopeRefreshedEvent e) {
+        this.log.info("The refresh count is now at: "
+                + this.counter.incrementAndGet());
+    }
 }

@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 class ProjectNameRestController {
 
- private final String projectName;
+    private final String projectName;
 
- @Autowired
- public ProjectNameRestController(
-  @Value("${configuration.projectName}") String pn) { // <2>
-  this.projectName = pn;
- }
+    @Autowired
+    public ProjectNameRestController(
+            @Value("${configuration.projectName}") String pn) { // <2>
+        this.projectName = pn;
+    }
 
- @RequestMapping("/project-name")
- String projectName() {
-  return this.projectName;
- }
+    @RequestMapping("/project-name")
+    String projectName() {
+        return this.projectName;
+    }
 }
